@@ -41,24 +41,29 @@ PT: Este projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ## 🚀 Getting started | Começando
 
-Clone the project and access the folder
+EN: Clone the project and access the folder
+
+PT: Clone o projeto e acesse a pasta
 
 ```bash
-$ git clone https://github.com/birobirobiro/nlw-05-plantmanager.git && cd nlw-05-plantmanager
+$ git clone https://github.com/nicolascodes18/nlw5-plantmanager.git && cd nlw5-plantmanager
 ```
 
-Follow the steps below
-```bash
-# Install the dependencies
-$ yarn install
+EN: Follow the steps below
 
-# Start the project
+PT: Siga os passos abaixo
+
+```bash
+# Install the dependencies | Instale as dependências
+$ yarn install or npm install
+
+# Start the project | Comece o projeto
 $ expo start
 ```
 
-## 💻 Project
+## 💻 Project | Projeto
 
-App to always remember to water your plants 🌱
+EN: [App to always remember to water your plants 🌱]
 
 This is a project developed during the **[Next Level Week](https://nextlevelweek.com/)**, presented by **[@Rocketseat](https://github.com/Rocketseat)** during April 19-25, 2021.
 
