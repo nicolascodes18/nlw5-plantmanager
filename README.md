@@ -26,15 +26,19 @@
 
 ---
 
-## 🧪 Technologies
+## 📡 Technologies | Tecnologias
 
-This project was developed using the following technologies:
+<h1>EN: This project was developed using the following technologies:<h1>
+<h3>PT: Este projeto foi desenvolvido utilizando as seguintes tecnologias<h3>
 
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.io/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [React Navigation](https://reactnavigation.org/)
+- [Babel](https://babeljs.io/)
 
-## 🚀 Getting started
+
+## 🚀 Getting started | Começando
 
 Clone the project and access the folder
 
