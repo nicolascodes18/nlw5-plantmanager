@@ -10,18 +10,10 @@
   <a href="#-license">License</a>
 </p>
 
-<p align="center">
-  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=FFFFFF&labelColor=32B768" alt="License">
-  
-  <img src="https://img.shields.io/github/forks/birobirobiro/nlw-05-plantmanager?label=forks&message=MIT&color=FFFFFF&labelColor=32B768" alt="Forks">     
-
-  <img src="https://img.shields.io/github/stars/birobirobiro/nlw-05-plantmanager?label=stars&message=MIT&color=FFFFFF&labelColor=32B768" alt="Stars">
-</p>
-
 <br>
 
 <p align="center">
-  <img alt="Moveit" src="./github/plantmanager-preview.png">
+  <img alt="Moveit" source=".github/plantmanager-preview.png">
 </p>
 
 ---
