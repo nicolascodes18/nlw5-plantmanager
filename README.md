@@ -28,7 +28,8 @@
 
 ## 📡 Technologies | Tecnologias
 
-EN: This project was developed using the following technologies:
+EN: This project was developed using the following technologies
+
 PT: Este projeto foi desenvolvido utilizando as seguintes tecnologias
 
 - [React Native](https://reactnative.dev/)
