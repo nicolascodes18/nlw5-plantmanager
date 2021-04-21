@@ -61,25 +61,34 @@ $ yarn install or npm install
 $ expo start
 ```
 
-## 💻 Project | Projeto
+## 📱 Project | Projeto
 
-EN: [App to always remember to water your plants 🌱]
+EN: App to always remember to water your plants 🌱
+    This is a project developed during the **[Next Level Week](https://nextlevelweek.com/)**, presented by **[@Rocketseat](https://github.com/Rocketseat)** during April 19-25, 2021.
 
-This is a project developed during the **[Next Level Week](https://nextlevelweek.com/)**, presented by **[@Rocketseat](https://github.com/Rocketseat)** during April 19-25, 2021.
+PT: App para lembrar sempre de regar suas plantas 🌱
+    Este é um projeto desenvolvido durante a **[Next Level Week](https://nextlevelweek.com/)**, apresentado por **[@Rocketseat](https://github.com/Rocketseat)** de 19 a 25 de abril de 2021.
+
 
 ## 🔖 Layout
 
-You can view the project layout through the links below:
+EN: You can view the project layout through the links below:
+
+PT: Você pode visualizar o layout do projeto através dos links abaixo:
 
 - [Layout](https://www.figma.com/file/IhQRtrOZdu3TrvkPYREzOy/PlantManager) 
 
-Remembering that you need to have a [Figma](http://figma.com/) account to access it.
+EN: Remembering that you need to have a [Figma](http://figma.com/) account to access it.
+
+PT: Lembrando que você precisa ter uma conta [Figma](http://figma.com/) para acessá-lo.
 
 ## 📝 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
+EN: This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
+
+PT: Este projeto está licenciado sob a Licença MIT. Consulte o arquivo de LICENÇA para obter detalhes.
 
 
 ---
 
-Made with 💜 by [birobirobiro](https://www.birobirobiro.dev) 👋
+Made with 💜 by [nicolascodes18](https://linktr.ee/nicolas_codes) 💼
