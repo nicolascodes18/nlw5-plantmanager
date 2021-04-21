@@ -10,8 +10,6 @@
   <a href="#-license">License</a>
 </p>
 
-<br>
-
 <p align="center">
   <img alt="Moveit" src=".github/plantmanager-preview.png">
 </p>

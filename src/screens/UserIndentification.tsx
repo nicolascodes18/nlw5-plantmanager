@@ -38,7 +38,11 @@ export function UserIdentification() {
 
 
     function handleSubmit() {
-        navigation.navigate('Confirmation')
+        if(!isFilled) {
+            return false;
+        } else {
+            navigation.navigate('Confirmation')
+        }
     }
 
     return (
@@ -56,7 +60,7 @@ export function UserIdentification() {
 
                         <View style={styles.header}>
                             <Text style={styles.emoji}>
-                                {name ? '😄' : '😀'}
+                                {name ? '🤩' : '🤔'}
                             </Text>
 
                             <Text style={styles.title}>
@@ -83,8 +87,8 @@ export function UserIdentification() {
                             />
                         </View>
                     </View>
-
                 </View>
+
                 </TouchableWithoutFeedback>
             </KeyboardAvoidingView>
         </SafeAreaView>
