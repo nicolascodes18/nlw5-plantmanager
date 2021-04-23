@@ -187,7 +187,6 @@ const styles = StyleSheet.create({
         color: colors.heading,
     },
     enviromentList: {
-        flex: 1,
         height: 40,
         justifyContent: "center",
         paddingBottom: 5,
