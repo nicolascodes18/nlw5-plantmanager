@@ -6,6 +6,7 @@ import {
     FlatList, // Elemento pra renderizar Lista na Tela
     ActivityIndicator
 } from "react-native";
+import { useNavigation } from "@react-navigation/core";
 import { color } from "react-native-reanimated";
 
 import { Header } from "../components/Header";
@@ -13,7 +14,7 @@ import { EnviromentButton } from "../components/EnviromentButton";
 import { PlantCardPrimary } from "../components/PlantCardPrimary";
 import { Load } from "../components/Load";
 
-
+import { PlantProps } from "../libs/storage";
 
 import api from "../services/api";
 import colors from "../styles/colors";
@@ -22,18 +23,6 @@ import fonts from "../styles/fonts";
 interface EnviromentProps {
     key: string;
     title: string;
-}
-
-interface PlantProps {
-    id: string;
-    name: string;
-    water_tips: string;
-    photo: string;
-    environments: [string];
-    frequency: {
-        times: number;
-        repeat_every: string;
-    },
 }
 
 export function PlantSelect() {
@@ -46,7 +35,8 @@ export function PlantSelect() {
 
     const [page, setPage] = useState(1);
     const [loadingMore, setLoadingMore] = useState(false);
-    const [loadedAll, setLoadedAll] = useState(false)
+
+    const navigation = useNavigation();
 
     function handleEnvironmentSelected(environment: string) {
         setEnviromentSelected(environment);
@@ -68,6 +58,10 @@ export function PlantSelect() {
         setLoadingMore(true);
         setPage(oldValue => oldValue + 1);
         fetchPlants();
+    }
+
+    function handlePlantSelect(plant: PlantProps) {
+        navigation.navigate('PlantSave', {plant});
     }
 
     async function fetchEnviroment() {
@@ -130,6 +124,7 @@ export function PlantSelect() {
             <View>
                 <FlatList
                     data={enviroments}
+                    keyExtractor={(item) => String(item.key)}
                     horizontal
                     showsHorizontalScrollIndicator={false} // Tirar a barrinha que fica em baixo da lista na hora da rolagem
                     contentContainerStyle={styles.enviromentList}
@@ -146,6 +141,7 @@ export function PlantSelect() {
             <View style={styles.plants}>
                 <FlatList
                     data={filteredPlants}
+                    keyExtractor={(item) => String(item.id)}
                     showsVerticalScrollIndicator={false}
                     numColumns={2}
                     onEndReachedThreshold={0.1}
@@ -157,9 +153,11 @@ export function PlantSelect() {
                         ? <ActivityIndicator color={colors.green} />
                         : <></>
                     }
-                    // contentContainerStyle={styles.contentPlants}
                     renderItem={({ item }) => (
-                        <PlantCardPrimary data={item} />
+                        <PlantCardPrimary 
+                        data={item} 
+                        onPress={() => handlePlantSelect(item)}
+                        />
                     )}
                 />
             </View>
@@ -189,6 +187,7 @@ const styles = StyleSheet.create({
         color: colors.heading,
     },
     enviromentList: {
+        flex: 1,
         height: 40,
         justifyContent: "center",
         paddingBottom: 5,
