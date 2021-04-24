@@ -3,7 +3,8 @@ import {
     StyleSheet,
     View,
     Text,
-    Image,    
+    Image,
+    Alert,    
 } from 'react-native'
 
 import { FlatList } from 'react-native-gesture-handler';
@@ -12,8 +13,9 @@ import { pt } from 'date-fns/locale';
 
 import { Header } from '../components/Header'
 import { PlantCardSecondary } from '../components/PlantCardSecondary';
+import { Load } from '../components/Load';
 
-import { loadPlant, PlantProps } from '../libs/storage';
+import { loadPlant, PlantProps, StoragePlantProps, removePlant } from '../libs/storage';
 
 import waterdrop from "../assets/waterdrop.png";
 import colors from '../styles/colors';
@@ -23,6 +25,30 @@ export function MyPlants() {
     const [myPlants, setMyPlants] = useState<PlantProps[]>([])
     const [loading, setLoading] = useState(true);
     const [nextWatered, setNextWatered] = useState<string>();
+
+    function handleRemove(plant: PlantProps) {
+        Alert.alert('Remover', `Deseja remover a ${plant.name}?`, [
+            {
+                text: 'Não ❌',
+                style: 'cancel'
+            },
+            {
+                text: 'Sim ✔',
+                onPress: async () => {
+                    try {         
+                        await removePlant(plant.id)
+
+                        setMyPlants((oldData) => (
+                            oldData.filter((item) => item.id != plant.id )
+                        ));
+                    } catch (error) {
+                        Alert.alert('Não foi possivel remover! ❗')
+                    }
+                }
+            }
+        ])
+    }
+
 
     useEffect(() => {
         async function loadStorageData() {
@@ -35,7 +61,7 @@ export function MyPlants() {
             )
 
             setNextWatered(
-                `Não esqueça de regar a ${plantsStoraged[0].name} à ${nextTime} horas.`
+                `Não esqueça de regar a ${plantsStoraged[0].name} à ${nextTime}.`
             )
 
             setMyPlants(plantsStoraged);
@@ -45,6 +71,8 @@ export function MyPlants() {
         loadStorageData();
     }, [])
 
+    if (loading)
+        return <Load />
     return(
         <View style={styles.container}>
             <Header />
@@ -71,6 +99,7 @@ export function MyPlants() {
                     renderItem={({ item}) => (
                         <PlantCardSecondary
                         data={item}
+                        handleRemove={() => {handleRemove(item)}}
                         />
                     )}
                     showsVerticalScrollIndicator={false}
@@ -118,3 +147,7 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     }
 })
+
+function handleRemove(item: any) {
+    throw new Error('Function not implemented.');
+}
