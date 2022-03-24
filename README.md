@@ -81,4 +81,4 @@ PT: Este projeto está licenciado sob a Licença MIT. Consulte o arquivo de LICE
 
 ---
 
-Made with 💜 by [nicolascodes18](https://linktr.ee/nicolas_codes) 💼
+Made with 💜 by [nicolascodes18](https://github.com/nicolascodes18) 💼
